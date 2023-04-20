@@ -52,8 +52,8 @@
         
         public function showByCurrencyAndDate( $currency, $date )
         {
-            
-            $currencyData = Currency::where( 'currency', $currency )
+            $currencyData = Currency::select( 'currency', 'date', 'amount' )
+                ->where( 'currency', $currency )
                 ->where( 'date', $date )
                 ->first();
             
@@ -61,5 +61,20 @@
                 return response()->json( [ 'error' => 'Waluty nie znaleziono' ], 404 );
             }
             return $currencyData;
+            
         }
+        
+        public function showByDate( $date )
+        {
+            $currencies = Currency::select( 'currency', 'date', 'amount' )
+                ->where( 'date', $date )
+                ->get();
+            
+            if ( $currencies->isEmpty() ) {
+                return response()->json( [ 'error' => 'Nie znaleziono walut dla podanej daty.' ], 404 );
+            }
+            
+            return $currencies;
+        }
+        
     }
