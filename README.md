@@ -23,16 +23,24 @@ POST   /api/currencies
 Wyświetlenie wszystkich walut z data dzisiejszą
 GET   /api/currencies 
 
+
 Wyświetlenie wszystkich walut z podanej daty
 GET   /api/currencies-date/:date 
+Przykład /api/currencies-date/2023-04-24
+
 
 Wyświetlenie podanej waluty z dzisiaj
 GET   /api/currencies-today/:currency
+Przykład /api/currencies-today/EUR
+
 
 Wyświetlenie podanej waluty z wszystkich dni
 GET   /api/currencies/:currency
+Przykład /api/currencies/EUR
+
 
 Wyświetlenie podanej waluty z podanej daty
 GET   /api/currencies/:currency/:date
+Przykład /api/currencies/EUR/2023-04-24
 
 ```
