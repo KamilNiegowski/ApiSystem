@@ -22,24 +22,16 @@ php artisan serve
 ## Routes
 
 ```
-# Public
-
-
 
 POST   /api/login
-@body: email, password
-
-POST   /api/register
-@body: name, email, password, password_confirmation
-
-
+@body: token
 
 POST   /api/currencies
 @body: currency, date yyyy-mm-dd, amount 
 
 GET   /api/currencies
+GET   /api/currencies/:date
 GET   /api/currencies/:currency
 GET   /api/currencies/:currency/:date
-
 
 ```
