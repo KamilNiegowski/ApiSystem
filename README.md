@@ -16,12 +16,23 @@ Now that all the containers are ready, we can go in the browser to the address: 
 POST   /api/login
 @body: token
 
+Dodawanie waluty
 POST   /api/currencies
-@body: currency, date yyyy-mm-dd, amount 
+@body: currency (string), date (yyyy-mm-dd), amount (decimal 8, 2) 
 
-GET   /api/currencies
+Wyświetlenie wszystkich walut z data dzisiejszą
+GET   /api/currencies 
+
+Wyświetlenie wszystkich walut z podanej daty
 GET   /api/currencies-date/:date 
+
+Wyświetlenie podanej waluty z dzisiaj
+GET   /api/currencies-today/:currency
+
+Wyświetlenie podanej waluty z wszystkich dni
 GET   /api/currencies/:currency
+
+Wyświetlenie podanej waluty z podanej daty
 GET   /api/currencies/:currency/:date
 
 ```

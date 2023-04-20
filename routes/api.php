@@ -19,4 +19,5 @@
     Route::resource( 'currencies', CurrencyController::class );
     Route::get( 'currencies/{currency}/{date}', [ CurrencyController::class, 'showByCurrencyAndDate' ] );
     Route::get( 'currencies-date/{date}', [ CurrencyController::class, 'showByDate' ] );
+    Route::get( 'currencies-today/{currency}', [ CurrencyController::class, 'showByCurrency' ] );
     
