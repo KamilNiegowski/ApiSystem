@@ -30,7 +30,7 @@ POST   /api/currencies
 @body: currency, date yyyy-mm-dd, amount 
 
 GET   /api/currencies
-GET   /api/currencies-date/:date
+GET   /api/currencies-date/:date 
 GET   /api/currencies/:currency
 GET   /api/currencies/:currency/:date
 
