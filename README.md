@@ -1,23 +1,13 @@
 # Laravel REST API with Sanctum
 
-## Usage
+## Setup
 
-Change the *.env.example* to *.env* and add your database info
+- `git clone https://github.com/KamilNiegowski/ApiSystem.git laravel-project`
+- `cd laravel-project && chmod +x docker-compose/running-site.sh`
+- `cp .env.example .env`
+- `docker compose  up -d --build`
 
-For SQLite, add
-
-```
-DB_CONNECTION=sqlite
-DB_HOST=127.0.0.1
-DB_PORT=3306
-```
-
-Create a _database.sqlite_ file in the _database_ directory
-
-```
-# Run the webserver on port 8000
-php artisan serve
-```
+Now that all the containers are ready, we can go in the browser to the address: `localhost`
 
 ## Routes
 
