@@ -46,6 +46,13 @@
         {
             return Currency::select( 'currency', 'date', 'amount' )
                 ->where( 'currency', $currency )
+                ->get();
+        }
+        
+        public function showByCurrency( $currency )
+        {
+            return Currency::select( 'currency', 'date', 'amount' )
+                ->where( 'currency', $currency )
                 ->whereDate( 'date', Carbon::today() )
                 ->first();
         }
