@@ -1,7 +1,5 @@
 # Laravel REST API with Sanctum
 
-This is an example of a REST API using auth tokens with Laravel Sanctum
-
 ## Usage
 
 Change the *.env.example* to *.env* and add your database info
@@ -26,8 +24,7 @@ php artisan serve
 ```
 # Public
 
-GET   /api/products
-GET   /api/products/:id
+
 
 POST   /api/login
 @body: email, password
@@ -36,15 +33,13 @@ POST   /api/register
 @body: name, email, password, password_confirmation
 
 
-# Protected
 
-POST   /api/products
-@body: name, slug, description, price
+POST   /api/currencies
+@body: currency, date yyyy-mm-dd, amount 
 
-PUT   /api/products/:id
-@body: ?name, ?slug, ?description, ?price
+GET   /api/currencies
+GET   /api/currencies/:currency
+GET   /api/currencies/:currency/:date
 
-DELETE  /api/products/:id
 
-POST    /api/logout
 ```
