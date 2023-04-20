@@ -64,11 +64,8 @@
             ],
             
             'api' => [
-                // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-                ThrottleRequests::class . ':api',
-                SubstituteBindings::class,
                 EnsureFrontendRequestsAreStateful::class,
-                'throttle:60,1',
+                ThrottleRequests::class . ':api',
                 SubstituteBindings::class,
             ],
         ];
@@ -82,6 +79,7 @@
          */
         protected $middlewareAliases = [
             'auth' => Authenticate::class,
+            'auth:sanctum' => EnsureFrontendRequestsAreStateful::class,
             'auth.basic' => AuthenticateWithBasicAuth::class,
             'auth.session' => AuthenticateSession::class,
             'cache.headers' => SetCacheHeaders::class,
