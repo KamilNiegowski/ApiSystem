@@ -7,12 +7,14 @@
 - `composer install`
 - `docker compose up -d --build`
 
-  Przed wykonaniem migracji prosze odczekac około 30s w celu uruchomienia bazy danych. Błąd podczas migracji świadczy że
-  baza danych nie zakończyła etapu uruchamiania. Prosze poczekać dodatkowe 30s i sprobować ponownie. Etap powatarzać do
+  Przed wykonaniem migracji proszę odczekać około 30s w celu uruchomienia bazy danych. Błąd podczas migracji świadczy,
+  że
+  baza danych nie zakończyła etapu uruchamiania. Prosze odczekać dodatkowe 30s i spróbować ponownie. Etap należy
+  powtarzać do
   momentu przeprowadzenia prawidłowej migracji.
 - `php artisan migrate --database=mysql_migration`
 
-Po wykonaniu prawidłowe migracji można przejśc na strone: `localhost`
+Po wykonaniu prawidłowej migracji można przejść na stronę: `localhost`
 
 ## Endpointy
 
