@@ -2,8 +2,8 @@
 
 ## Setup
 
-- `git clone https://github.com/KamilNiegowski/ApiSystem.git laravel-project`
-- `cd laravel-project && cp .env.example .env`
+- `git clone https://github.com/KamilNiegowski/ApiSystem.git ApiLaravel`
+- `cd ApiLaravel && cp .env.example .env`
 - `composer install`
 - `docker compose up -d --build`
 - `php artisan migrate --database=mysql_migration`
