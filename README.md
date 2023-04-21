@@ -1,6 +1,6 @@
 # Laravel REST API with Sanctum
 
-## Setup
+## Uruchomienie aplikacji
 
 - `git clone https://github.com/KamilNiegowski/ApiSystem.git ApiLaravel`
 - `cd ApiLaravel && cp .env.example .env`
@@ -11,9 +11,9 @@
   momentu przeprowadzenia prawidłowej migracji.
 - `php artisan migrate --database=mysql_migration`
 
-Now that all the containers are ready, we can go in the browser to the address: `localhost`
+Po wykonaniu prawidłowe migracji można przejśc na strone: `localhost`
 
-## Routes
+## Endpointy
 
 ```
 
