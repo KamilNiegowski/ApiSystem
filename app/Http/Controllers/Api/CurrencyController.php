@@ -29,7 +29,7 @@
             
             if ( $currency ) {
                 return response()->json( [
-                    'message' => 'Waluta została już dzisiaj dodana',
+                    'message' => 'Waluta została dodana w tym dniu',
                     'currency' => $currency
                 ], 422 );
             }
