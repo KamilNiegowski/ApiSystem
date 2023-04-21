@@ -6,6 +6,9 @@
 - `cd ApiLaravel && cp .env.example .env`
 - `composer install`
 - `docker compose up -d --build`
+  Przed wykonaniem migracji prosze odczekac około 30s w celu uruchomienia bazy danych. Błąd podczas migracji świadczy że
+  baza danych nie zakończyła etapu uruchamiania. Prosze poczekać dodatkowe 30s i sprobować ponownie. Etap powatarzać do
+  momentu przeprowadzenia prawidłowej migracji.
 - `php artisan migrate --database=mysql_migration`
 
 Now that all the containers are ready, we can go in the browser to the address: `localhost`
