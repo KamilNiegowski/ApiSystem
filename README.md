@@ -1,45 +1,58 @@
 # Laravel REST API with Sanctum
 
-## Usage
+## Uruchomienie aplikacji
 
-Change the *.env.example* to *.env* and add your database info
+- `git clone https://github.com/KamilNiegowski/ApiSystem.git ApiLaravel`
+- `cd ApiLaravel && cp .env.example .env`
+- `composer install`
+- `docker compose up -d --build`
 
-For SQLite, add
+  Przed wykonaniem migracji proszę odczekać około 30s w celu uruchomienia bazy danych. Błąd podczas migracji świadczy,
+  że
+  baza danych nie zakończyła etapu uruchamiania. Prosze odczekać dodatkowe 30s i spróbować ponownie. Etap należy
+  powtarzać do
+  momentu przeprowadzenia prawidłowej migracji.
+- `php artisan migrate --database=mysql_migration`
 
-```
-DB_CONNECTION=sqlite
-DB_HOST=127.0.0.1
-DB_PORT=3306
-```
+Po wykonaniu prawidłowej migracji można przejść na stronę: `localhost`
 
-Create a _database.sqlite_ file in the _database_ directory
-
-```
-# Run the webserver on port 8000
-php artisan serve
-```
-
-## Routes
+## Endpointy
 
 ```
-# Public
-
-
 
 POST   /api/login
 @body: email, password
 
-POST   /api/register
-@body: name, email, password, password_confirmation
-
-
-
+Dodawanie waluty
 POST   /api/currencies
-@body: currency, date yyyy-mm-dd, amount 
+Authorization: Bearer Token 
+@body: currency, date (yyyy-mm-dd), amount (decimal 8, 2) 
 
-GET   /api/currencies
+Wyświetlenie wszystkich walut z data dzisiejszą
+Authorization: Bearer Token 
+GET   /api/currencies 
+
+Wyświetlenie wszystkich walut z podanej daty
+Authorization: Bearer Token 
+GET   /api/currencies-date/:date 
+Przykład /api/currencies-date/2023-04-24
+
+
+Wyświetlenie podanej waluty z dzisiaj
+Authorization: Bearer Token
+GET   /api/currencies-today/:currency
+Przykład /api/currencies-today/EUR
+
+
+Wyświetlenie podanej waluty z wszystkich dni
+Authorization: Bearer Token
 GET   /api/currencies/:currency
-GET   /api/currencies/:currency/:date
+Przykład /api/currencies/EUR
 
+
+Wyświetlenie podanej waluty z podanej daty
+Authorization: Bearer Token
+GET   /api/currencies/:currency/:date
+Przykład /api/currencies/EUR/2023-04-24
 
 ```

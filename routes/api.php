@@ -14,8 +14,19 @@
     | be assigned to the "api" middleware group. Make something great!
     |
     */
+    
+    // Route group dla autoryzowanych użytkowników
+    Route::middleware( 'auth:sanctum' )->group( function () {
+        
+        // Endpoint dla pobrania kursów walut
+        Route::get( '/currencies', [ CurrencyController::class, 'index' ] );
+        
+        // Endpoint dla dodania kursu waluty
+        Route::post( '/currencies', [ CurrencyController::class, 'store' ] )
+            ->middleware( 'once-per-day' );
+        
+    } );
+
+// Endpoint dla autoryzacji tokenu
     Route::post( '/login', [ AuthController::class, 'login' ] );
-    
-    Route::resource( 'currencies', CurrencyController::class );
-    Route::get( 'currencies/{currency}/{date}', [ CurrencyController::class, 'showByCurrencyAndDate' ] );
-    
+
